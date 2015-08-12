@@ -1,0 +1,19 @@
+//Button stylings
+
+.btn-scroll{
+transition: all 0.4s ease;
+    @include vertical-align(absolute);
+    top:80%;
+    font-family: $font_site-headlines;
+    background:none;
+    border:1px #fff solid;
+    color:#fff;
+    text-transform: uppercase;
+    padding:10px;
+
+    &:hover{color: #fff;
+    text-decoration:none;
+  background:rgba(255,255,255,0.3)}
+
+    &:visited{color:#fff;}
+}

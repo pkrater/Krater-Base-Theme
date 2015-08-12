@@ -1,0 +1,47 @@
+{% extends 'layouts/home.twig' %}
+
+{% block content %}
+
+
+    <div id="primary" class="content-area">
+      <div class="hero1">
+
+        <img id="overlayimg" src="../protectkemi/wp-content/themes/krater-base-theme/dist/img/overlay2.jpg" />
+
+      </div>
+
+      <div class="hero2"></div>
+
+
+
+      </div>
+
+      <div class="wrap container" role="document">
+
+        <div class="content">
+          <div class="home-title headliner">
+          <h1>Avlagringar på rutan</h1>
+          <a href="#hero2" class="btn-scroll">NER</a>
+        </div>
+          <div id="hero2" class="home-title"> <h1>Vi tar bort dem</h1> </div>
+
+        <main id="main" class="site-main" role="main">
+
+
+            {% for post in posts({
+                'category_name': 'homepage',
+                'orderby':'name',
+                'order':'ASC'}) %} {{ the_post(post) }}
+                {% include 'content/content-page.twig' %}
+            {% endfor %}
+
+        </main><!-- #main -->
+
+
+<div id="map"></div>
+    </div><!-- #primary -->
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'includes/sidebar.twig' %}
+{% endblock %}

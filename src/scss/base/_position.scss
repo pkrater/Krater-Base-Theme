@@ -1,0 +1,21 @@
+.float-left {
+	float:left;
+}
+.float-right {
+	float:right;
+}
+.position-relative {
+	position:relative;
+}
+.clearfix {
+    clear:both;
+}
+
+//helper class for vertical aligning and centering
+
+.vert-align{
+@include vertical-align(relative);
+margin:0 auto;
+text-align:center;
+
+}

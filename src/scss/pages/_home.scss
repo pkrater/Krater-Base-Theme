@@ -1,0 +1,41 @@
+//Home page specific stylings
+
+.heroframe{
+height:100vh; width:100%; margin-top:30px; display:block;
+color:white;
+}
+
+#overlayimg{opacity:0.7; transition: opacity 0.4s ease-in-out;}
+.wipe{opacity:0!important; }
+
+.hero1{
+  height:100vh;
+  width:100%;
+  background:url('../img/stockholm1.jpg') ;
+  background-size:cover;
+  background-color:#49c9c2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+overflow: hidden;}
+
+.hero2{height:100vh; width:100%;
+// background:url('../img/overlay2.jpg') ;
+// background-size:cover; opacity: 0.7; background-color:rgba(#7cb351, 0.0);
+position:relative; top:50px;}
+
+.headliner{margin-top:-100vh;}
+
+.home-title{ height:100vh;width:100%; text-align: center;display: block;
+
+
+
+
+h1 {
+      @include vertical-align(relative);
+       @include font-size(10);
+       color: #fff;
+      &:first{margin-top:-100vh;}
+ }
+ }
