@@ -16,29 +16,61 @@
 
       </div>
 
-      <div class="wrap container" role="document">
+      <div class="wrap" role="document">
 
         <div class="content">
-          <div class="home-title headliner">
-          <h1>Avlagringar på rutan</h1>
-          <a href="#hero2" class="btn-scroll">NER</a>
-        </div>
-          <div id="hero2" class="home-title"> <h1>Vi tar bort dem</h1> </div>
-
-        <main id="main" class="site-main" role="main">
-
+          <div class="headliner">
 
             {% for post in posts({
-                'category_name': 'homepage',
-                'orderby':'name',
-                'order':'ASC'}) %} {{ the_post(post) }}
-                {% include 'content/content-page.twig' %}
+              'meta_key': 'headline',
+              'meta_value': 'first'
+
+          }) %} {{ the_post(post) }}
+                {% include 'content/content-intro.twig' %}
+              {% endfor %}
+
+          <!-- <h1>Avlagringar på rutan</h1>
+          <a href="#hero2" class="btn-scroll">NER</a> -->
+
+        </div>
+          <div id="hero2" class="home-title">
+
+            {% for post in posts({
+            'meta_key': 'headline',
+            'meta_value': 'second'
+            }) %} {{ the_post(post) }}
+                {% include 'content/content-intro.twig' %}
             {% endfor %}
+
+
+           </div>
+
+  <main id="main" class="site-main" role="main">
+
+
+
+             {% for post in posts({
+
+                  'category': 'homepage',
+                  'meta_key': 'home_section',
+                  'orderby': 'meta_value_num',
+                  'order': 'ASC'
+
+             }) %} {{ the_post(post) }}
+
+                 {% include 'content/content-section.twig' %}
+             {% endfor %}
+
+
+
+
+
+
 
         </main><!-- #main -->
 
 
-<div id="map"></div>
+
     </div><!-- #primary -->
 {% endblock %}
 

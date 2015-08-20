@@ -2,14 +2,45 @@
 
 .btn-scroll{
 transition: all 0.4s ease;
-    @include vertical-align(absolute);
-    top:80%;
+
+
     font-family: $font_site-headlines;
-    background:none;
-    border:1px #fff solid;
+  //  background:none;
+  //  border:1px #fff solid;
     color:#fff;
     text-transform: uppercase;
     padding:10px;
+  //  position:relative;
+    top:40px;
+
+
+
+position: relative;
+width: 210px;
+height: 50px;
+padding:10px;
+background: #297ebb;
+-webkit-border-radius: 1px;
+-moz-border-radius: 1px;
+border-radius: 1px;
+
+
+/*&:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 22px 100px 0;
+border-color: #297ebb transparent;
+display: block;
+width: 0;
+z-index: 1;
+margin-left: -100px;
+bottom: -22px;
+left: 50%;
+}
+*/
+
 
     &:hover{color: #fff;
     text-decoration:none;

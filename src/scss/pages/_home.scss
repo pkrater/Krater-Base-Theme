@@ -6,14 +6,15 @@ color:white;
 }
 
 #overlayimg{opacity:0.7; transition: opacity 0.4s ease-in-out;}
+
 .wipe{opacity:0!important; }
 
 .hero1{
   height:100vh;
   width:100%;
-  background:url('../img/stockholm1.jpg') ;
+  background:url('../img/stockholm1_mini.jpg');
   background-size:cover;
-  background-color:#49c9c2;
+  background-color:rgb(51, 122, 183);
   position: fixed;
   top: 0;
   left: 0;
@@ -21,8 +22,7 @@ color:white;
 overflow: hidden;}
 
 .hero2{height:100vh; width:100%;
-// background:url('../img/overlay2.jpg') ;
-// background-size:cover; opacity: 0.7; background-color:rgba(#7cb351, 0.0);
+
 position:relative; top:50px;}
 
 .headliner{margin-top:-100vh;}
@@ -32,10 +32,95 @@ position:relative; top:50px;}
 
 
 
-h1 {
+.boxed {
       @include vertical-align(relative);
-       @include font-size(10);
+
        color: #fff;
-      &:first{margin-top:-100vh;}
+
+
+      h1 {
+         @include font-size(5);
+
+      }
+
+
+
+
+      @media (min-width: $screen-md){
+
+      h1 {
+         @include font-size(10);
+
+      }
+
+      h2{ @include font-size(7);}
+    }
  }
  }
+
+
+
+.home_section{
+        display: block;
+        padding-top:50px;
+        margin-bottom: 60px;
+
+  &:nth-of-type(1){margin-top: -23px;}
+
+ .home_section_title{
+   @include vertical-align(relative);
+   width:100%;
+   min-height: 150px;
+   //background:#fff;
+   text-align:center;
+
+   &:after{
+
+     content:"";
+     display:block;
+     width:250px;
+     height:3px;
+     background:$main-red;
+     top:40px;
+     left:50%;
+     transform: translateX(-50%);
+     position: relative;
+     z-index:99;
+
+}
+
+   h2{
+
+
+     @include font-size(3);
+     color:$main-gray;
+     padding-top:90px;
+
+     }
+
+
+
+     @media (min-width: $screen-md){
+
+       h2{
+
+
+         @include font-size(6);
+         color: $main-gray;
+
+
+       }
+
+     }
+
+ }
+
+ }
+
+//the section content
+
+.home_section_content{
+
+  margin-top: 20px;
+
+}

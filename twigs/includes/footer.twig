@@ -2,10 +2,28 @@
 
 <footer class="content-info" role="contentinfo">
 
+  <!-- Map Section -->
+
   <div class="container">
-    
+
 
   </div>
+  {% for post in posts({
+    'meta_key': 'footer',
+    'meta_value': 'the contact section'
 
+}) %} {{ the_post(post) }}
+      {% include 'content/content-footer.twig' %}
+    {% endfor %}
+<div id="map"></div>
+<div class="branding-footer">
+  <div class="row text-center footer-logo">
+
+      <a class="" href="{{ wp.home_url() }}"><img src="../protectkemi/wp-content/themes/krater-base-theme/dist/img/loggasmall.png" /></a>
+  </div>
+<div class="row text-center copyright">
+  &copy; 2015 Protectkemi AB
+</div>
+</div>
 </footer>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6_vpwlCOMRlcf33KSDHeqvqeH-fV2uxU&sensor=false"></script>

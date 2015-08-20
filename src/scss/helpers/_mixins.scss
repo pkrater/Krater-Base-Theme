@@ -42,12 +42,7 @@
 	transform: translateY(-50%);
 }
 
-//helper class for the above
 
-.vert-align{
-@include vertical-align(relative);	
-
-}
 
 @mixin vertical-align-table() {
 	display: table-cell;

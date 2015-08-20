@@ -7,7 +7,6 @@ body {
 }
 
 body,
-button,
 input,
 select,
 textarea,
@@ -20,6 +19,14 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
     text-overflow: ellipsis;
 		font-family: $font_site-headlines;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]{
+
+  	font-family: $font_site-headlines;
 }
 
 p {

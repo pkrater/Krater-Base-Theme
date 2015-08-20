@@ -2,3 +2,35 @@
 .entry-footer {
   clear:both;
 }
+
+#footer_contact_section{
+
+  color:$main-white;
+  background:$main-gray;
+margin-top: 60px;
+padding-top: 30px;
+margin-bottom:0;
+
+  h2{color:$main-white;}
+
+}
+
+
+
+
+.branding-footer{
+
+  padding:40px;
+
+ @include font-size(1.5);
+
+}
+
+.footer-logo{
+  img{height:50px;}
+  padding-bottom:10px;
+}
+
+.footer_data {
+    margin-bottom: 25px;
+}

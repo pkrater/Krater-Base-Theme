@@ -1,4 +1,4 @@
-<header class="banner navbar navbar-default navbar-responsive navbar-fixed-top navbar-compact" role="banner">
+<header class="banner navbar navbar-default navbar-responsive navbar-fixed-top navbar-not-home" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ wp.home_url() }}"><img src="{{ wp.home_url() }}/wp-content/themes/krater-base-theme/dist/img/loggasmall.png" /></a>
+      <a class="navbar-brand" href="{{ wp.home_url() }}"><img src="./wp-content/themes/krater-base-theme/dist/img/loggasmall.png" /></a>
     </div>
 
 
@@ -23,14 +23,7 @@
                     'fallback_cb':'wp_bootstrap_navwalker::fallback'
                 }) }}
 
-                <!-- <a href="{{ wp.site_url()}}/kontakt" class="navbar-right">KONTAKTA OSS</a> -->
 
-              {#  <form id="searchform" class="navbar-form navbar-right" role="search" action="{{ wp.site_url() }}" method="get">
-                    <div class="form-group">
-                        <input id="s" name="s" type="text" class="form-control" placeholder="" value="{{ wp.get_search_query() }}">
-                    </div>
-                    <button id="searchsubmit" type="submit" class="btn btn-default">Search</button>
-                </form> #}
             </div>
         {% endif %}
     </nav>
