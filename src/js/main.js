@@ -25,6 +25,10 @@ var sprig = {
 
       // JavaScript to be fired on all pages
 
+
+
+        svg4everybody();
+
       // Google Maps Scripts
        // When the window has finished loading create our google map below
        google.maps.event.addDomListener(window, 'load', init);
@@ -99,7 +103,7 @@ var sprig = {
            var map = new google.maps.Map(mapElement, mapOptions);
 
            // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
-           var image = './wp-content/themes/krater-base-theme/dist/img/map-marker2.png';
+           var image = './wp-content/themes/Krater-Base-Theme/dist/img/map-marker2.png';
            var myLatLng = new google.maps.LatLng(59.27081, 18.00412 );
            var beachMarker = new google.maps.Marker({
                position: myLatLng,
@@ -125,7 +129,6 @@ var sprig = {
             $window.scroll(function(e){
                 if ($window.scrollTop() > pos) {
 
-
                     $this.addClass('navbar-compact');
 
                 } else {
@@ -137,7 +140,22 @@ var sprig = {
 
 
 
+        // COLLAPSE MENU ON CLICK IN MOBILE VIEW ==========================
 
+        	$(function() {
+                // Close bootstrap's dropdown menu after clicking
+                $('div.collapse ul.nav li a').each(function() {
+                    $(this).on("click", function () {
+                        var $obj = $($(this).parents('.in')[0]);
+                        $obj.animate({'height': '1px'}, function() {
+                            $obj.removeClass('in').addClass('collapse');
+                            $('nav').removeClass('in').addClass('collapse');
+                        });
+                    });
+                });
+            });
+
+        //=====================================================================
 
 
 
@@ -155,7 +173,7 @@ var sprig = {
     init: function() {
       // JavaScript to be fired on the home page
 
-
+        $('header').removeClass('navbar-compact');
 
       function myscroll(myID){
     var offset = jQuery("#"+myID).offset()
@@ -169,6 +187,7 @@ var sprig = {
         queue:true,
         duration:1000,
         hash:true,
+        offset:-50,
         onBefore:function( e, anchor, $target ){
           // The 'this' is the settings object, can be modified
         },
@@ -185,6 +204,52 @@ var sprig = {
 
 
 
+
+
+// overlay handler function
+
+
+/*      $( window ).scroll(function() {
+
+          var visibleMe = $('#post-19 h1').visible(true);
+
+            if (timer > 500) {
+                timer = 0;
+    if(visibleMe == true){
+
+      $('#overlayimg').addClass('wipe');
+
+
+    }else{
+
+      $('#overlayimg').removeClass('wipe');
+
+    }
+}
+
+
+
+
+  });
+
+  var timer = 0;
+  setInterval(function () { timer += 50; }, 50);
+*/
+
+  $(document).on('scroll', function() {
+
+    var pos = $(window).scrollTop();
+    var thickness = 1 - pos / $(window).height();
+    if(thickness < 0.7){
+      $('#overlayimg').css("opacity", thickness);
+    }else{
+    $('#overlayimg').css("opacity", 0.7);
+    }
+
+
+  })
+
+
       // Sticky hero
       var windw = this;
 
@@ -195,13 +260,13 @@ var sprig = {
           $window.scroll(function(e){
               if ($window.scrollTop() > pos) {
 
-                   $('#overlayimg').addClass('wipe');
+
                   $this.css({
                       position: 'absolute',
                       top: pos
                   });
               } else {
-                 $('#overlayimg').removeClass('wipe');
+                // $('#overlayimg').removeClass('wipe');
                   $this.css({
                       position: 'fixed',
                       top: 0
@@ -212,7 +277,7 @@ var sprig = {
 
       var pH = $(window).height();
 
-      $('.hero1').followTo(pH+70);
+      $('.hero1').followTo(pH+50);
 
       $('.navbar-default').ResponsiveMenu(200);
 

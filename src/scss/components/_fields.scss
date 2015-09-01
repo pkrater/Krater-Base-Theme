@@ -80,9 +80,13 @@ input[type="submit"] {
     cursor: pointer;
     font-weight: 700;
     text-transform: uppercase;
-    width: 100%;
+
 
 }
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {width: 100%;}
 
 button:hover,
 input[type="button"]:hover,

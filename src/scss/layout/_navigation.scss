@@ -3,8 +3,8 @@
 
 $bgDefault      : rgba(0,0,0,0);
 $bgHighlight    : rgba(0,0,0,0);;
-$colDefault     : #ecf0f1;
-$colHighlight   : #ecdbff;
+$colDefault     : #fff;
+$colHighlight   : #fff;
 $dropDown       : true;
 
 .navbar-default {
@@ -57,10 +57,11 @@ $dropDown       : true;
   .navbar-form {
     border-color: $colDefault;
     border: none;
+    overflow:hidden;
 
   .in{
 
-background: rgba(10, 10, 10, 0.87) none repeat scroll 0% 0%;
+//background: rgba(10, 10, 10, 0.87) none repeat scroll 0% 0%;
 min-height: 100vh;
 z-index: 100;
 position: relative;
@@ -69,7 +70,17 @@ border:none;
 box-shadow:none;
 
 
-  }}
+
+@media (max-width: 767px) {background: rgba(63, 77, 80, 0.59) none repeat scroll 0% 0%;
+
+  
+&:collapse{}
+
+}
+
+  }
+
+}
   .navbar-link {
     color: $colDefault;
     &:hover {
@@ -87,31 +98,13 @@ box-shadow:none;
 }
 
 .navbar-not-home{background: rgba(63, 77, 80, 0.59);}
-// .navbar-responsive{background:none;border:none;
-//
-//   .navbar-nav>li>a {
-//       color: rgba(255, 255, 255, 1);
-//       background-color: rgba(248, 248, 248, 0);
-//   &:hover,&:focus{
-//     color: rgba(226, 225, 250, 1);
-//     background-color: rgba(248, 248, 248, 0);
-// }
-//
-// .navbar-nav>.active>a, .navbar-nav>.active>a:hover,
-// &::after .navbar-nav>.active>a:focus {
-//     color: rgba(190, 247, 213, 1);
-//     background-color: rgba(231, 231, 231, 0);
-// }
-// .navbar-toggle {
-//     border-color: #ddd;
-// }
-//   }
-//
-//
-//
-//
-// }
 
+.navbar-toggle .icon-bar {
+
+
+    height: 4px;
+
+}
 
 .navbar-compact {
     background: rgba(63, 77, 80, 0.59);
@@ -146,7 +139,7 @@ a {font-family: $font_site-headlines;
  .navbar-brand img{
     transition:all 0.4s cubic-bezier(0.57, 0.11, 0.68, 1.47);
    height:108px;
-   margin-top: 15px;
+   margin-top: 0px;
 border: 10px solid #fff;
 
  }

@@ -6,6 +6,14 @@ button, input, select, textarea {
 
 .tempbox{width:100%; height:50px; background:red; display:block;}
 
+.flexcontainer {
+
+   display: flex;
+  flex-direction: row;  /* works with row or column */
+   align-items: center;
+   justify-content: flex-start;
+}
+
 
 @import "lists";
 @import "tables";
@@ -13,6 +21,7 @@ button, input, select, textarea {
 @import "fields";
 @import "comments";
 @import "wp-fixes";
+@import "icons";
 
 @media(min-width:$screen-xs-max) {
 
