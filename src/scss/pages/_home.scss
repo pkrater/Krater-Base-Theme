@@ -5,14 +5,18 @@ height:100vh; width:100%; margin-top:30px; display:block;
 color:white;
 }
 
-#overlayimg{opacity:0.7; }
+#overlayimg{opacity:0.7; width: 100%;  height: 100%;}
 
 .wipe{opacity:0!important; }
 
 .hero1{
   height:100vh;
   width:100%;
-  background:url('../img/stockholm1_mini.jpg');
+  background:url('../img/stockholm1_minimedium.jpg');
+    @media (min-resolution: 120dpi){ .hero1 {background:url('../img/stockholm1_mini.jpg');}}
+    @media (min-width: $screen-md){ .hero1 {background:url('../img/stockholm1_minibig.jpg');}}
+      @media (min-width: $screen-tablet){ .hero1 {background:url('../img/stockholm1_minimedium.jpg');} }
+        @media (max-width: $screen-phone){.hero1 {background:url('../img/stockholm1_minismall.jpg');} }
   background-size:cover;
   background-color:rgb(51, 122, 183);
   position: fixed;
