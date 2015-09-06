@@ -7,7 +7,7 @@
 
   color:$main-white;
   background:$main-gray;
-margin-top: 60px;
+//margin-top: 60px;
 padding-top: 30px;
 margin-bottom:0;
 
@@ -21,6 +21,7 @@ margin-bottom:0;
 .branding-footer{
 
   padding:40px;
+  background-color: #fff;
 
  @include font-size(1.5);
 

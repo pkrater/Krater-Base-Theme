@@ -26,7 +26,7 @@ var sprig = {
       // JavaScript to be fired on all pages
 
 
-
+      // svg polyfill init
         svg4everybody();
 
       // Google Maps Scripts
@@ -236,6 +236,8 @@ var sprig = {
   setInterval(function () { timer += 50; }, 50);
 */
 
+    //Make overlay transparent on scroll
+
   $(document).on('scroll', function() {
 
     var pos = $(window).scrollTop();
@@ -250,12 +252,16 @@ var sprig = {
   })
 
 
-      // Sticky hero
-      var windw = this;
+      // Sticky hero image -- triggger on larger screens
 
-      $.fn.followTo = function ( pos ) {
-          var $this = this,
-              $window = $(windw);
+
+              if (document.documentElement.clientWidth > 900) {
+
+                var windw = this;
+
+                $.fn.followTo = function ( pos ) {
+                    var $this = this,
+                        $window = $(windw);
 
           $window.scroll(function(e){
               if ($window.scrollTop() > pos) {
@@ -278,6 +284,8 @@ var sprig = {
       var pH = $(window).height();
 
       $('.hero1').followTo(pH+50);
+
+      }
 
       $('.navbar-default').ResponsiveMenu(200);
 
