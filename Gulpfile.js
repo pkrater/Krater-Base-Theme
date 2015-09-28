@@ -142,7 +142,7 @@ gulp.task('browser-sync', function () {
 
    browserSync.init(files, {
 
-         proxy: "http://127.0.0.1/protectkemi/"
+         proxy: "http://127.0.0.1/actors/"
 
    });
 
